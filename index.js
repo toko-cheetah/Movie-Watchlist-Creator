@@ -25,9 +25,7 @@ async function searchFilm(event) {
 }
 
 async function incompleteData(name) {
-  const response = await fetch(
-    `http://www.omdbapi.com/?apikey=97753bae&s=${name}`
-  );
+  const response = await fetch(`http://www.omdbapi.com/?apikey=97753bae&s=${name}`);
   const data = await response.json();
 
   return data.Search.map((num) => num.imdbID);
@@ -35,9 +33,7 @@ async function incompleteData(name) {
 
 async function fullData(imdbId) {
   const promises = imdbId.map(async (id) => {
-    const response = await fetch(
-      `http://www.omdbapi.com/?apikey=97753bae&i=${id}&plot=full`
-    );
+    const response = await fetch(`http://www.omdbapi.com/?apikey=97753bae&i=${id}&plot=full`);
     const data = await response.json();
 
     return data;
