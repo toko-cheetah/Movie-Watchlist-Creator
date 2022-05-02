@@ -2,9 +2,7 @@ const savedFilms = document.getElementById("saved-films");
 let watchlistArray = [];
 
 function watchlist() {
-  savedFilms.innerHTML = localStorage.length
-    ? getFromLocalStorage()
-    : `
+  savedFilms.innerHTML = localStorage.length ? getFromLocalStorage() : `
     <div class="back-text">
       <h2>Your watchlist is looking a little empty...</h2>
   
